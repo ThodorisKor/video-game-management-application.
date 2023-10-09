@@ -20,7 +20,7 @@ function create_videogame(){
 
     if(!isset($_POST['title']) || !isset($_POST['desc']) || !isset($_POST['rel_date']) || !isset($_POST['genre'])){
         header("HTTP/1.1 400 Bad Request");
-        print json_encode(['errormesg'=>"Please every field!"]);
+        print json_encode(['errormesg'=>"Please fill out all required fields!"]);
         exit;
     }
     $sql = 'insert into video_games(title,description,release_date,genre,user_id) values(?,?,?,?,?)';
